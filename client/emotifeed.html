@@ -1,21 +1,28 @@
 <head>
 	<title>Emotifeed</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Emotifeed">
+    <meta name="author" content="Advanced Interaction Lab.">
 </head>
  
 <body>
-	<div name="main">
 		{{> page}}
-	</div>
 </body>
 
 <template name="page">
-	<div class="container-narrow">
-		<!--Title bar with app name-->
-		<div class="musthead">
-			<h3 class="muted text-center">Emotifeed</h3>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div>
+				<center>
+					<h3 class="muted">Emotifeed</h3>
+				</center>
+			</div>
 		</div>
+	</div>
 
+	<div class="container theme-showcase">
 		{{#if is_vote}}
 			{{> vote}}
 		{{/if}}
