@@ -2,7 +2,7 @@ Template.vote.message = ->
 	getLastMessage()
 
 window.getLastMessage = ->
-	Messages.findOne({}, {sort: {date: -1}, callback: -> alert("fsd")})
+	Messages.findOne({}, {sort: {date: -1}})
 
 Session.set "selected", "none"
 
