@@ -1,20 +1,21 @@
 <template name="vote">
 	{{#if message}}
-		{{{message.content}}}
+		<h2>{{{message.content}}}</h2>
 	{{else}}
 		<p>No messages</p>
 	{{/if}}
 	<br/>
 	<br/>
-	<h4>Como você se sente quanto à esta mensagem?</h4>
-	<div class="alert alert-info">Sua resposta é sigilosa e não será divulgada <b>A NINGUÉM</b>!</div>
+	<br/>
+	<br/>
+	<p>O que você acha deste recado?</p>
 	<table width="100%">
 		<tr id="feelings">
-			<td><img id="happy" src="/images/happy.png" alt="Happy" class="img-rounded img-responsive"></td>
-			<td><img id="medium_happy" src="/images/medium-happy.png" alt="Happy" class="img-rounded img-responsive"></td>
-			<td><img id="indiferent" src="/images/indiferent.png" alt="Happy" class="img-rounded img-responsive"></td>
-			<td><img id="medium_sad" src="/images/medium-sad.png" alt="Happy" class="img-rounded img-responsive"></td>
-			<td><img id="sad" src="/images/sad.png" alt="Happy" class="img-rounded img-responsive"></td>
+			<td><img id="happy" src="/images/happy.png" alt="Happy" class="img-rounded img-responsive" style="background: transparent;"></td>
+			<td><img id="medium_happy" src="/images/medium-happy.png" alt="Happy" class="img-rounded img-responsive" style="background: transparent;"></td>
+			<td><img id="indiferent" src="/images/indiferent.png" alt="Happy" class="img-rounded img-responsive" style="background: transparent;"></td>
+			<td><img id="medium_sad" src="/images/medium-sad.png" alt="Happy" class="img-rounded img-responsive" style="background: transparent;"></td>
+			<td><img id="sad" src="/images/sad.png" alt="Happy" class="img-rounded img-responsive" style="background: transparent;"></td>
 		</tr>
 		<tr>
 			<td colspan="5"><br/></td>
@@ -23,4 +24,6 @@
 			<td colspan="5" align="center"><button class="btn btn-large btn-default" type="submit">votar</button></td>
 		</tr>
 	</table>
+	<br />
+	<div class="alert alert-info">Sua resposta é sigilosa e não será divulgada <b>A NINGUÉM</b>!</div>
 </template>

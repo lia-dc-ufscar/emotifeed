@@ -16,4 +16,15 @@ Template.vote.events =
 
 	"click #feelings img": (e) ->
 		id = $(e.target).attr("id")
-		Session.set "selected", id
+		if Session.get("selected") is "none"
+			Session.set "selected", id
+			$(e.target)[0].style.background = "gray"
+		else
+			if Session.get("selected") is id
+				$(e.target)[0].style.background = "transparent"
+				Session.set "selected", "none"
+			else
+				last = Session.get("selected")
+				$("##{last}")[0].style.background = "transparent"
+				$(e.target)[0].style.background = "gray"
+				Session.set "selected", id
