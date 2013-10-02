@@ -12,7 +12,7 @@
 </body>
 
 <template name="page">
-	<div class="navbar navbar-inverse navbar-fixed-top">
+	<!--<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div>
 				<center>
@@ -20,7 +20,7 @@
 				</center>
 			</div>
 		</div>
-	</div>
+	</div>-->
 
 	<div class="container theme-showcase">
 		{{#if is_vote}}
@@ -37,6 +37,9 @@
 		{{/if}}
 		{{#if is_home}}
 			{{> home}}
+		{{/if}}
+		{{#if is_screen}}
+			{{> screen}}
 		{{/if}}
 	</div>
 </template>
