@@ -2,75 +2,15 @@
 <template name="message_feedback">
 	<br/>
 
-	<h3 align="center">Feedback</h3>
+	{{#if message}}
+		{{> show_message}}
+	{{else}}
+		<p>Loading</p>
+	{{/if}}
 
 	<br/>
 
-	<table width="85%" align="center">
-		<tr>
-			<td colspan="2" align="center"><p class="lead">Vai asdasdasdasdasdasdasdsadas bando de...</p></td>
-		</tr>
-		<tr>
-			<td align="center" width="30%">
-				<img id="happy" src="/images/happy.png" alt="Happy" class="img-rounded img-responsive">
-			</td>
-			<td align="left" width="70%">
-				<div class="progress">
-					<div class="progress-bar" ariavalue-now="60" ariavalue-max="100" style="width: 60%">
-						<span class="sr-only">60% complete</span>
-					</div>
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td align="center">
-				<img id="medium_happy" src="/images/medium-happy.png" alt="Happy" class="img-rounded img-responsive">
-			</td>
-			<td align="left">
-				<div class="progress">
-					<div class="progress-bar" ariavalue-now="80" ariavalue-max="100" style="width: 80%">
-						<span class="sr-only">80% complete</span>
-					</div>
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td align="center">
-				<img id="indiferent" src="/images/indiferent.png" alt="Happy" class="img-rounded img-responsive">
-			</td>
-			<td align="left">
-				<div class="progress">
-					<div class="progress-bar" ariavalue-now="15" ariavalue-max="100" style="width: 15%">
-						<span class="sr-only">15% complete</span>
-					</div>
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td align="center">
-				<img id="medium_sad" src="/images/medium-sad.png" alt="Happy" class="img-rounded img-responsive">
-			</td>
-			<td align="left">
-				<div class="progress">
-					<div class="progress-bar" ariavalue-now="94" ariavalue-max="100" style="width: 94%">
-						<span class="sr-only">94% complete</span>
-					</div>
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td align="center">
-				<img id="sad" src="/images/sad.png" alt="Happy" class="img-rounded img-responsive">
-			</td>
-			<td align="left">
-				<div class="progress">
-					<div class="progress-bar" ariavalue-now="8" ariavalue-max="100" style="width: 8%">
-						<span class="sr-only">8% complete</span>
-					</div>
-				</div>
-			</td>
-		</tr>
-	</table>
+	
 	<br/>
 	<a href="home" name="back" class="btn btn-large btn-default btn-block">Voltar</a>
 	<br/>
@@ -78,9 +18,31 @@
 	<br/>
 </template>
 
+<template name="show_message">
+	<table width="85%" align="center">
+		<tr>
+			<td colspan="2" align="center"><p class="lead">Vai asdasdasdasdasdasdasdsadas bando de...</p></td>
+		</tr>
+		{{#each feelings}}
+			<tr>
+				<td align="center" width="30%">
+					<img id="{{label}}" src="/images/{{label}}.png" alt="{{label}}" class="img-rounded img-responsive">
+				</td>
+				<td align="left" width="70%">
+					<div class="progress">
+						<div class="progress-bar" ariavalue-now="60" ariavalue-max="100" style="width: {{percentage}}%">
+							<span class="sr-only">60% complete</span>
+						</div>
+					</div>
+				</td>
+			</tr>
+		{{/each}}
+	</table>
+</template>
+
 
 <!-- Option 2 -->
-<!--<template name="feedback">
+<!--<template name="message_feedback">
 	<br/>
 	<br/>
 

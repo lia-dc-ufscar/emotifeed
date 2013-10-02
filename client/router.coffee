@@ -5,6 +5,7 @@ class window.AppRouter extends Backbone.Router
 		"feedback": "feedback"
 		"home": "home"
 		"message_feedback": "messageFeedback"
+		"message_feedback/:id": "parameterizedMessageFeedback"
 
 	newMessage: ->
 		Session.set "current_page", "new_message"
@@ -19,4 +20,8 @@ class window.AppRouter extends Backbone.Router
 		Session.set "current_page", "home"
 
 	messageFeedback: ->
+		Session.set "current_page", "message_feedback"
+
+	parameterizedMessageFeedback: (id) ->
+		Session.set "selected_message", id
 		Session.set "current_page", "message_feedback"
