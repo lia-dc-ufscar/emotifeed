@@ -1,6 +1,9 @@
 Template.message_feedback.message = ->
 	getSelectedMessage()
 
+Template.show_message.content = ->
+	getSelectedMessage().content
+
 window.getSelectedMessage = ->
 	Messages.findOne(Session.get("selected_message"))
 

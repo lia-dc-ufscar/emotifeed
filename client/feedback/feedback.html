@@ -1,10 +1,12 @@
 <!-- Option 1 -->
 <template name="feedback">
+	<h4 class="text-center">Lista de mensagens já enviadas para a TV</h4>
 	<div name="centralize-buttons" style="text-align: center;">
 		<br />
 		{{#each messages}}
 			{{> message}}
 		{{/each}}
+		<a href="home" name="back" class="btn btn-large btn-default btn-home">Voltar</a>
 	</div>
 </template>
 
