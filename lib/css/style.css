@@ -119,3 +119,37 @@
 .customized-progress {
 	background-color: #CCCCCC;
 }
+
+body { 
+    background-color: #bdbbb9; 
+} 
+  
+.notice { 
+    width: 90%; 
+    min-height: 600px; 
+    margin: 10px auto; 
+    background-color: #efead5; 
+    /*box-shadow: 0px 5px 18px #585858;*/
+    /*border: #cbc5ac 1px solid;*/
+} 
+  
+.notice-content { 
+    float: left; 
+    margin-left: 50px; 
+    margin-right: 50px; 
+} 
+  
+.round { 
+    float: right; 
+} 
+  
+.additional-information { 
+    margin: 18px auto; 
+    width: 90%; 
+    min-height: 100px; 
+} 
+  
+.left-information { 
+    float: left; 
+    width: 50%; 
+}

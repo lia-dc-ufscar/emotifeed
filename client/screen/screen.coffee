@@ -1,4 +1,4 @@
-Template.vote.message = ->
+Template.screen.message = ->
 	getLastMessage()
 
 window.getLastMessage = ->
