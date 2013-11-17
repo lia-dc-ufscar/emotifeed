@@ -13,4 +13,3 @@ Template.vote.events =
 		selected = $(e.target).attr("id")
 		answer[selected] = 1
 		Messages.update(id, {$inc: answer})
-		
