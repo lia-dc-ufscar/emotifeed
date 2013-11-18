@@ -1,7 +1,7 @@
 <!-- Option 1 -->
 <template name="feedback">
 	<h4 class="text-center">Lista de mensagens já enviadas para a TV</h4>
-	<div name="centralize-buttons" style="text-align: center;">
+	<div name="centralize-buttons" style="text-align: center; width: 90%;">
 		<br />
 		{{#each messages}}
 			{{> message}}
@@ -11,7 +11,7 @@
 </template>
 
 <template name="message">
-	<a href="message_feedback/{{_id}}" class="btn btn-large btn-default btn-home">{{{content}}}</a>
+	<a href="message_feedback/{{_id}}" class="btn btn-large btn-default btn-home"><p style="width: 100%; overflow: auto;">{{{content}}}</p></a>
 	<br />
 	<br />
 </template>
