@@ -7,6 +7,20 @@ Template.show_message.content = ->
 window.getSelectedMessage = ->
 	Messages.findOne(Session.get("selected_message"))
 
+Template.show_message.date = ->
+	current_message = getSelectedMessage().date
+
+	dd = current_message.getDate()
+	mm = current_message.getMonth() + 1
+	yyyy = current_message.getFullYear()
+
+	if ( dd < 10 )
+		dd = '0' + dd 
+	if ( mm < 10 )
+		mm = '0' + mm
+
+	current_message = mm + '/' + dd + '/' + yyyy;
+
 feelings = [ "happy", "medium_happy", "indiferent", "medium_sad", "sad" ]
 
 Template.show_message.feelings = ->
