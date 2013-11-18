@@ -10,7 +10,7 @@
 
 	<br/>
 	<br/>
-	<a href="../feedback" name="back" class="btn btn-large btn-default btn-block" style="width: 90%; margin: 0 auto;">Voltar</a>
+	<a href="../feedback" name="back" class="btn btn-large btn-default btn-block" style="width: 90%; margin: 0 auto; font-size: 30px;">Voltar</a>
 	<br/>
 	<br/>
 	<br/>
@@ -19,7 +19,7 @@
 <template name="show_message">
 	<table width="85%" align="center">
 		<tr>
-			<td colspan="2" align="center"><p class="lead">{{{content}}}</p></td>
+			<td colspan="2" align="right"><p class="lead" style="font-size: 30px; text-align: justify;">{{{content}}}</p></td>
 		</tr>
 		{{#each feelings}}
 			<tr>
@@ -33,6 +33,9 @@
 						</div>
 					</div>
 				</td>
+			</tr>
+			<tr>
+				<td colspan=2>&nbsp;</td>
 			</tr>
 		{{/each}}
 	</table>
