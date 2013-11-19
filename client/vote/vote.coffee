@@ -34,6 +34,8 @@ Template.vote.events =
 		if ( seconds < 10 )
 			seconds = '0' + seconds
 
-		today = mm + '/' + dd + '/' + yyyy + " " + hours + ":" + minutes + ":" + seconds;
+		today = dd + '/' + mm + '/' + yyyy + " " + hours + ":" + minutes + ":" + seconds;
 
 		History.insert { ip: "ip", choice: selected, timestamp: today }
+
+		console.log $(e.target)

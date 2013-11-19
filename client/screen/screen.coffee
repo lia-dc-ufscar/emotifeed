@@ -3,7 +3,7 @@ Template.screen.message = ->
 
 window.getLastMessage = ->
 	Messages.findOne({}, {sort: {date: -1}})
-	
+
 $ ->
 	$(document).on "keyup", (e) ->
 		console.log e.keyCode
@@ -41,7 +41,7 @@ $ ->
 		if ( seconds < 10 )
 			seconds = '0' + seconds
 
-		today = mm + '/' + dd + '/' + yyyy + " " + hours + ":" + minutes + ":" + seconds;
+		today = dd + '/' + mm + '/' + yyyy + " " + hours + ":" + minutes + ":" + seconds;
 
 		History.insert { ip: "keyboard", choice: selected, timestamp: today }
 		false
