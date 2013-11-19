@@ -154,3 +154,44 @@ body {
     float: left; 
     width: 50%; 
 }
+
+.my-btn-inverse.active {
+	  color: rgba(255, 255, 255, 0.75);
+}
+
+.my-btn-inverse {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #9b9999;
+  *background-color: #9b9999;
+  background-image: -moz-linear-gradient(top, #666666, #222222);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#666666), to(#9b9999));
+  background-image: -webkit-linear-gradient(top, #666666, #9b9999);
+  background-image: -o-linear-gradient(top, #666666, #9b9999);
+  background-image: linear-gradient(to bottom, #666666, #9b9999);
+  background-repeat: repeat-x;
+  border-color: #9b9999 #9b9999 #000000;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff444444', endColorstr='#ff222222', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+.my-btn-inverse:hover,
+.my-btn-inverse:focus,
+.my-btn-inverse:active,
+.my-btn-inverse.active,
+.my-btn-inverse.disabled,
+.my-btn-inverse[disabled] {
+  color: #ffffff;
+  background-color: #9b9999;
+  *background-color: #9b9999;
+}
+
+.my-btn-inverse:active,
+.my-btn-inverse.active {
+  background-color: #9b9999 \9;
+}
+
+.test {
+	background: gray;
+}
