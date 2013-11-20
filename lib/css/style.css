@@ -195,3 +195,14 @@ body {
 .test {
 	background: gray;
 }
+
+.vote-button {
+
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.thanks {
+
+	font-weight: bold;
+}

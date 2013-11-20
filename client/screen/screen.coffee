@@ -44,4 +44,9 @@ $ ->
 		today = dd + '/' + mm + '/' + yyyy + " " + hours + ":" + minutes + ":" + seconds;
 
 		History.insert { ip: "keyboard", choice: selected, timestamp: today }
+
+		button = $("body")
+		$("<div class='thanks' />").text("Obrigado pela opinião!").css({"background-color": "#FED753", color: "#09903F", "font-size": "30px", position:"absolute", left:button.width() / 2, top:button.height()}).appendTo($("body")).animate {top:"-=50",opacity:0}, 5000, ->
+			this.remove()
+
 		false

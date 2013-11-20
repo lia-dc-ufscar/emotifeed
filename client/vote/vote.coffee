@@ -10,7 +10,11 @@ Template.vote.events =
 	"mousedown #feelings img": (e) ->
 		answer = {}
 		id = getLastMessage()._id
-		selected = $(e.target).attr("id")
+		button = $(e.target)
+		$("<div class='thanks' />").text("Obrigado!").css({position:"absolute", left:button.offset().left, top:button.offset().top}).appendTo($("body")).animate {top:"-=50",opacity:0}, 2000, ->
+			this.remove()
+		button.stop().animate({'padding-top': '40', 'padding-bottom': '0'} , 100, 'swing').animate({'padding-top': '20', 'padding-bottom': '20'} , 100, 'swing')
+		selected = button.attr("id")
 		answer[selected] = 1
 		Messages.update(id, {$inc: answer})
 

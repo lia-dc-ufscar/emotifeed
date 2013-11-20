@@ -4,7 +4,10 @@ Template.new_message.events =
 		if ( content != "" )
 			Messages.insert {content: content, happy: 0, medium_happy: 0, indiferent: 0, medium_sad: 0, sad: 0, date: new Date}
 		else
-			console.log "error"
+			button = $("#post")
+			console.log button
+			$("<div class='thanks' />").text("Erro: digite o conteúdo da mensagem!").css({position:"absolute", left:button.offset().left - 30, top:button.offset().top - 30}).appendTo($("body")).animate {top:"-=50",opacity:0}, 8000, ->
+				this.remove()
 
 Template.new_message.com_date = ->
 	today = new Date
