@@ -8,11 +8,13 @@ $ ->
 	$(document).on "keyup", (e) ->
 		console.log e.keyCode
 
+		selected = ""
 		selected = "happy" if e.keyCode is 83
 		selected = "medium_happy" if e.keyCode is 68
 		selected = "indiferent" if e.keyCode is 70
 		selected = "medium_sad" if e.keyCode is 71
 		selected = "sad" if e.keyCode is 72
+		return if _.isEmpty selected
 
 		console.log selected
 
