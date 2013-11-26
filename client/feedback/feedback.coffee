@@ -18,9 +18,8 @@ Template.message.formattedDate = ->
 	if ( mm < 10 )
 		mm = '0' + mm
 
-	formattedDate = mm + '/' + dd + '/' + yyyy;
+	formattedDate = dd + '/' + mm + '/' + yyyy;
 
 Template.feedback.events =
 	"click a": (e) ->
 		selected_message = $(e.target).attr "id"
-		console.log selected_message

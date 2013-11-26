@@ -1,5 +1,3 @@
-root = global ? window
-
 Meteor.startup ->
-	new AppRouter
+	window.router = new AppRouter
 	Backbone.history.start pushState: true

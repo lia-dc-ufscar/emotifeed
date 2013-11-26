@@ -3,11 +3,11 @@ Template.new_message.events =
 		content = $('textarea[name=message]').val().split("\n").join("<br/>")
 		if ( content != "" )
 			Messages.insert {content: content, happy: 0, medium_happy: 0, indiferent: 0, medium_sad: 0, sad: 0, date: new Date}
+			$.notify "ASDIJASDINASDIN", "success"
+			router.navigate "feedback", {trigger: true}
 		else
 			button = $("#post")
-			console.log button
-			$("<div class='thanks' />").text("Erro: digite o conteúdo da mensagem!").css({position:"absolute", left:button.offset().left - 30, top:button.offset().top - 30}).appendTo($("body")).animate {top:"-=50",opacity:0}, 8000, ->
-				this.remove()
+			$("textarea[name=message]").notify "Digite o conteúdo do comunicado", "error"
 
 Template.new_message.com_date = ->
 	today = new Date

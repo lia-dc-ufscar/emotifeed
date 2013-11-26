@@ -19,7 +19,7 @@ Template.show_message.date = ->
 	if ( mm < 10 )
 		mm = '0' + mm
 
-	current_message = mm + '/' + dd + '/' + yyyy;
+	current_message = dd + '/' + mm + '/' + yyyy;
 
 feelings = [ "happy", "medium_happy", "indiferent", "medium_sad", "sad" ]
 
