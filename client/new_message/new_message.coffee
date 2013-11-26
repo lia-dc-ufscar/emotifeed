@@ -3,7 +3,7 @@ Template.new_message.events =
 		content = $('textarea[name=message]').val().split("\n").join("<br/>")
 		if ( content != "" )
 			Messages.insert {content: content, happy: 0, medium_happy: 0, indiferent: 0, medium_sad: 0, sad: 0, date: new Date}
-			$.notify "ASDIJASDINASDIN", "success"
+			$.notify "Comunicado enviado para a TV.", {position: "top center", className: "success"}
 			router.navigate "feedback", {trigger: true}
 		else
 			button = $("#post")
