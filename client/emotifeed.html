@@ -27,23 +27,17 @@
 		{{> vote}}
 	{{/if}}
 
-	{{#if is_logged}}
-		{{#if is_new_message}}
-			{{> new_message}}
-		{{/if}}
-		{{#if is_feedback}}
-			{{> feedback}}
-		{{/if}}
-		{{#if is_message_feedback}}
-			{{> message_feedback}}
-		{{/if}}
-		{{#if is_home}}
-			{{> home}}
-		{{/if}}
-	{{else}}
-		{{#if is_logged_needed}}
-			{{> auth}}
-		{{/if}}
+	{{#if is_new_message}}
+		{{> new_message}}
+	{{/if}}
+	{{#if is_feedback}}
+		{{> feedback}}
+	{{/if}}
+	{{#if is_message_feedback}}
+		{{> message_feedback}}
+	{{/if}}
+	{{#if is_home}}
+		{{> home}}
 	{{/if}}
 
 	{{#if is_screen}}
