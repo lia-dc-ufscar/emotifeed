@@ -4,56 +4,42 @@ Template.index.message = ->
 window.getLastMessage = ->
 	Messages.findOne({}, {sort: {date: -1}})
 
-Template.index.com_date = ->
-	today = new Date
-	console.log today
-	dd = today.getDate()
-	mm = today.getMonth() + 1
-	yyyy = today.getFullYear()
+Session.set "selected", "none"
 
-	if ( dd < 10 )
-		dd = '0' + dd 
-	if ( mm < 10 )
-		mm = '0' + mm
-
-	today = dd + '/' + mm + '/' + yyyy
-
-$ ->
-	$(window).on "keydown", (e) ->
-		return true if e.shiftKey || e.metaKey
-		return true unless Session.get("current_page") == "index"
-
-		selected = ""
-		selected = "happy" if e.keyCode is 83
-		selected = "medium_happy" if e.keyCode is 68
-		selected = "indiferent" if e.keyCode is 70
-		selected = "medium_sad" if e.keyCode is 71
-		selected = "sad" if e.keyCode is 72
-		return true if _.isEmpty selected
-
-		console.log selected
-
+Template.index.events = 
+	"mousedown #feelings img": (e) ->
 		answer = {}
 		id = getLastMessage()._id
+		button = $(e.target)
+		$("<div class='thanks' />").text("Obrigado!").css({position:"absolute", left:button.offset().left, top:button.offset().top}).appendTo($("body")).animate {top:"-=50",opacity:0}, 2000, ->
+			this.remove()
+		button.stop().animate({'padding-top': '40', 'padding-bottom': '0'} , 100, 'swing').animate({'padding-top': '20', 'padding-bottom': '20'} , 100, 'swing')
+		selected = button.attr("id")
 		answer[selected] = 1
 		Messages.update(id, {$inc: answer})
 
-		#insert client information in database#
+		///insert client information in database///
 		today = new Date
 		dd = today.getDate()
-		console.log dd
 		mm = today.getMonth() + 1
 		yyyy = today.getFullYear()
 		hours = today.getHours()
 		minutes = today.getMinutes()
 		seconds = today.getSeconds()
 
-		today = dd + '/' + mm + '/' + yyyy
+		if ( dd < 10 )
+			dd = '0' + dd 
+		if ( mm < 10 )
+			mm = '0' + mm
+		if ( hours < 10 )
+			hours = '0' + hours
+		if ( minutes < 10 )
+			minutes = '0' + minutes
+		if ( seconds < 10 )
+			seconds = '0' + seconds
 
-		History.insert { ip: "keyboard", choice: selected, timestamp: today }
+		today = dd + '/' + mm + '/' + yyyy + " " + hours + ":" + minutes + ":" + seconds;
 
-		button = $("body")
-		$("<div class='thanks' />").text("Obrigado pela opinião!").css({"background-color": "#FED753", color: "#09903F", "font-size": "30px", position:"absolute", left:button.width() / 2, top:button.height()}).appendTo($("body")).animate {top:"-=50",opacity:0}, 5000, ->
-			this.remove()
+		History.insert { ip: "ip", choice: selected, timestamp: today }
 
-		false
+		console.log $(e.target)
