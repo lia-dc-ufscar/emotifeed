@@ -5,8 +5,12 @@ window.getLastMessage = ->
 	Messages.findOne({}, {sort: {date: -1}})
 
 Template.screen.com_date = ->
-	today = new Date
-	console.log today
+	'<span id="formatted_date">bla</span>'
+	###getLastMessage()
+	console.log "row: " + row
+	today = row.date
+	console.log today 
+
 	dd = today.getDate()
 	mm = today.getMonth() + 1
 	yyyy = today.getFullYear()
@@ -16,7 +20,7 @@ Template.screen.com_date = ->
 	if ( mm < 10 )
 		mm = '0' + mm
 
-	today = dd + '/' + mm + '/' + yyyy
+	today = dd + '/' + mm + '/' + yyyy###
 
 $ ->
 	$(window).on "keydown", (e) ->

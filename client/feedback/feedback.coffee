@@ -7,8 +7,6 @@ window.getAllMessages = ->
 	Messages.find({}, {sort: {date: -1}})
 
 Template.message.formattedDate = ->
-	console.log this.date
-
 	dd = this.date.getDate()
 	mm = this.date.getMonth() + 1
 	yyyy = this.date.getFullYear()
