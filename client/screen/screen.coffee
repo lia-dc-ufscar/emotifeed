@@ -22,6 +22,9 @@ Template.screen.com_date = ->
 
 	today = dd + '/' + mm + '/' + yyyy###
 
+Template.screen.interactions = ->
+	History.find().count()
+
 $ ->
 	$(window).on "keydown", (e) ->
 		return true if e.shiftKey || e.metaKey
@@ -35,8 +38,6 @@ $ ->
 		selected = "sad" if e.keyCode is 72
 		return true if _.isEmpty selected
 
-		console.log selected
-
 		answer = {}
 		id = getLastMessage()._id
 		answer[selected] = 1
@@ -45,7 +46,6 @@ $ ->
 		#insert client information in database#
 		today = new Date
 		dd = today.getDate()
-		console.log dd
 		mm = today.getMonth() + 1
 		yyyy = today.getFullYear()
 		hours = today.getHours()
