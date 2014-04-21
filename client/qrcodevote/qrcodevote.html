@@ -1,0 +1,40 @@
+<template name="qrcodevote">
+	{{#constant}}
+		<!--<div class="customized-form" style="width: 100%;">
+			<h3>Comunicado da diretoria:</h3>
+			{{#if message}}
+				<h2 class="message-border">{{{message.content}}}</h2>
+			{{else}}
+				<p>No messages</p>
+			{{/if}}
+		</div>-->
+		<br/>
+		<div class="customized-form" style="width: 80%;">
+			<h3 style="font-size: 30px;">Qual é a sua opinião sobre o comunicado da diretoria?</h3>
+			<table width="100%">
+				<tr id="feelings">
+					<td><img id="happy" src="/images/happy.png" alt="Happy" class="vote-button"/></td>
+					<td><img id="medium_happy" src="/images/medium_happy.png" alt="Happy" class="vote-button img-rounded img-responsive" /></td>
+					<td><img id="indiferent" src="/images/indiferent.png" alt="Happy" class="vote-button img-rounded img-responsive" /></td>
+					<td><img id="medium_sad" src="/images/medium_sad.png" alt="Happy" class="vote-button img-rounded img-responsive" /></td>
+					<td><img id="sad" src="/images/sad.png" alt="Happy" class="vote-button img-rounded img-responsive" /></td>
+				</tr>
+			</table>
+			<br />
+			
+			<h3><b>Sua opinião é anônima!</b></h3>
+			
+			<!--<table width="100%">
+				<tr>
+					<td align="left">
+						<a href="http://www.the-qrcode-generator.com/"><img src="http://chart.apis.google.com/chart?chs=200x200&amp;cht=qr&amp;chld=|1&amp;chl=http%3A%2F%2Flia2.dc.ufscar.br%3A3000%2Fvote" alt="QR Code" /></a>
+					</td>
+					<td align="right">
+						<img src="/images/lia.png" alt="LIA" />
+					</td>
+				</tr>
+			</table>-->
+			
+		</div>
+	{{/constant}}
+</template>

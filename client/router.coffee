@@ -2,6 +2,7 @@ class window.AppRouter extends Backbone.Router
 	routes:
 		"new_message": "newMessage"
 		"vote": "vote"
+		"qrcodevote": "qrcodevote"
 		"feedback": "feedback"
 		"home": "home"
 		"message_feedback": "messageFeedback"
@@ -14,6 +15,9 @@ class window.AppRouter extends Backbone.Router
 
 	vote: ->
 		Session.set "current_page", "vote"
+
+	qrcodevote: ->
+		Session.set "current_page", "qrcodevote"
 
 	feedback: ->
 		Session.set "current_page", "feedback"

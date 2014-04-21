@@ -6,6 +6,7 @@ pages = [
 	"message_feedback"
 	"screen"
 	"index"
+	"qrcodevote"
 ]
 
 window.Helpers = {}

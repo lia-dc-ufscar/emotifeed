@@ -27,15 +27,22 @@
 		{{> vote}}
 	{{/if}}
 
+	{{#if is_qrcodevote}}
+		{{> qrcodevote}}
+	{{/if}}
+
 	{{#if is_new_message}}
 		{{> new_message}}
 	{{/if}}
+
 	{{#if is_feedback}}
 		{{> feedback}}
 	{{/if}}
+
 	{{#if is_message_feedback}}
 		{{> message_feedback}}
 	{{/if}}
+
 	{{#if is_home}}
 		{{> home}}
 	{{/if}}
@@ -43,6 +50,7 @@
 	{{#if is_screen}}
 		{{> screen}}
 	{{/if}}
+
 	{{#if is_index}}
 		{{> index}}
 	{{/if}}
